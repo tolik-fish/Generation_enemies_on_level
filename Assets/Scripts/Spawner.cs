@@ -4,8 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Timer))]
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _prefab;
+    [SerializeField] private List<Enemy> _prefabs;
     [SerializeField] private List<Point> _points;
+    [SerializeField] private List<Cube> _targets;
 
     private Timer _timer;
 
@@ -26,31 +27,17 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        Enemy enemy = Instantiate(_prefab);
+        int index = GetIndex(0, _points.Count);
 
-        enemy.transform.position = GetPosition();
+        Enemy enemy = Instantiate(_prefabs[index]);
 
-        enemy.SetDirection(GetDirection());
+        enemy.transform.position = _points[index].transform.position;
+
+        enemy.SetTarget(_targets[index].transform);
     }
 
-    private Vector3 GetDirection()
+    private int GetIndex(int minNumber, int maxNumber)
     {
-        float minRandom = -100f;
-        float maxRandom = 100f;
-
-        float x = Random.Range(minRandom,maxRandom);
-        float y = 0f;
-        float z = Random.Range(minRandom, maxRandom);
-
-        return new Vector3(x, y, z);
-    }
-
-    private Vector3 GetPosition()
-    {
-        int minRandom = 0;
-
-        int random = Random.Range(minRandom, _points.Count);
-
-        return _points[random].transform.position;
+        return Random.Range(minNumber, maxNumber);
     }
 }

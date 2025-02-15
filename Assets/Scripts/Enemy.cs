@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Mover _mover;
-    private Vector3 _direction;
+    private Transform _target;
 
     private void Awake()
     {
@@ -13,10 +13,10 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        MoveToTarget();
     }
 
-    public void SetDirection(Vector3 vector) => _direction = vector;
+    public void SetTarget(Transform transform) => _target = transform;
 
-    private void Move() => _mover.Move(transform, _direction);
+    private void MoveToTarget() => _mover.MoveToTarget(transform, _target);
 }
