@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Mover), typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
+    [SerializeField] private float _distance;
     [SerializeField] private int _index;
     [SerializeField] private List<Point> _wayPoints;
 
@@ -18,11 +19,16 @@ public class Cube : MonoBehaviour
 
     private void Update()
     {
-        if (_wayPoints[_index].transform.position == transform.position)
-            GetNextWaypoint();
+        if (IsWaypointReached())
+            DetermineNextWaypoint();
 
         _mover.Move(transform, _wayPoints[_index].transform.position);
     }
 
-    private void GetNextWaypoint() => _index = ++_index % _wayPoints.Count;
+    private bool IsWaypointReached()
+    {
+        return transform.position.IsEnoughClose(_wayPoints[_index].transform.position, _distance);
+    }
+
+    private void DetermineNextWaypoint() => _index = ++_index % _wayPoints.Count;
 }

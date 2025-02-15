@@ -654,6 +654,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
+      propertyPath: _distance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
       propertyPath: _wayPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1719172522}
@@ -821,6 +825,10 @@ PrefabInstance:
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
       propertyPath: _index
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
+      propertyPath: _distance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
       propertyPath: _wayPoints.Array.data[0]
@@ -1092,6 +1100,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
+      propertyPath: _distance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
       propertyPath: _wayPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1719172522}
@@ -1358,6 +1370,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
       propertyPath: _index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
+      propertyPath: _distance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6071845840461872476, guid: df40d5f04c20bb642ac5811d17492f11, type: 3}
